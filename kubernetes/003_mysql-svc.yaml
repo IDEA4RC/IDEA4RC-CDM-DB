@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-idea4rc-service
+  namespace: datamesh
+spec:
+  selector:
+    app: mysql-idea4rc
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+  type: ClusterIP
