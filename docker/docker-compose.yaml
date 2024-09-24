@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: <put-your-root-password-here>
+      MYSQL_DATABASE: idea4rc
+      MYSQL_USER: <put-your-username-here>
+      MYSQL_PASSWORD: <put-your-password-here>
+    volumes:
+      - ./data.sql:/docker-entrypoint-initdb.d/data.sql
